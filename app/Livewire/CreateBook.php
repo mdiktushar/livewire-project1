@@ -30,7 +30,7 @@ class CreateBook extends Component
             'author' => $this->author,
             'rating' => $this->rating,
         ]);
-        $this->redirect('/');
+        $this->redirect('/', navigate: true);
     }
 
     // #[Layout('components.layouts.second')]
