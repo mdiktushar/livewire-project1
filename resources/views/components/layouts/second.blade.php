@@ -12,7 +12,7 @@
 <body>
     <nav>
         <div>
-            <h1>My Book Reviews</h1>
+            <h1>My Book Reviews SECOND LAYOUT</h1>
             <a @class(['active' => request()->is('/')])
                 href="/">
                 Book List
