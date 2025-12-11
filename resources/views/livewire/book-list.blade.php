@@ -1,7 +1,13 @@
 <div>
-    {{-- page header --}}
+    {{-- page header start --}}
     <livewire:page-header subtitle="Here's a list of your book reviews..." />
-    {{-- page content --}}
+    {{-- page header end --}}
+
+    {{-- search start --}}
+    <input class="search" wire:model.live.debounce.300ms="term" type="text" placeholder="Search for Books...">
+    {{-- search end --}}
+
+    {{-- page content start --}}
     <ul class="list">
         @foreach ($books as $book)
             <li wire:key ="{{ $book->id }}">
@@ -14,5 +20,5 @@
             </li>
         @endforeach
     </ul>
+    {{-- page content emd --}}
 </div>
-
