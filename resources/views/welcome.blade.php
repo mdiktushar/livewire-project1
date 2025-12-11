@@ -9,6 +9,8 @@
 <body>
   <main>
     <h2>Welcome to the Livewire Crash Course!</h2>
+
+    <livewire:book-list />
   </main>
 </body>
 </html>
