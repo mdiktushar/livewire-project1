@@ -1,6 +1,6 @@
 <div>
     {{-- page header --}}
-    <livewire:page-header />
+    <livewire:page-header subtitle="Here's a list of your book reviews..." />
     {{-- page content --}}
     <ul class="list">
         @foreach ($books as $book)
@@ -15,3 +15,4 @@
         @endforeach
     </ul>
 </div>
+
