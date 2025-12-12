@@ -9,13 +9,11 @@ use Livewire\Attributes\Title;
 class BookList extends Component
 {
     // listening events
-    protected $listeners = ['bookAdded' => '$refresh', 'bookUpdated'=> '$refresh'];
+    protected $listeners = ['bookAdded' => '$refresh'];
     public $term = '';
 
-    public function delete(Book $book)
-    {
-        $book->delete();
-    }
+    public $open = false;
+    public $book;
 
     #[Title('Book list')]
     public function render()
@@ -28,5 +26,38 @@ class BookList extends Component
         return view('livewire.book-list', [
             'books' => Book::all(),
         ]);
+    }
+
+    public function edit($id)
+    {
+        $book = Book::findOrFail($id);
+
+        $this->book = [
+            'id'     => $book->id,
+            'title'  => $book->title,
+            'author' => $book->author,
+            'rating' => $book->rating,
+        ];
+
+        $this->open = true;
+    }
+
+
+    public function update()
+    {
+        $book = Book::findOrFail($this->book['id']);
+
+        $book->title  = $this->book['title'];
+        $book->author = $this->book['author'];
+        $book->rating = $this->book['rating'];
+
+        $book->save();
+
+        $this->open = false;
+    }
+
+    public function delete(Book $book)
+    {
+        $book->delete();
     }
 }

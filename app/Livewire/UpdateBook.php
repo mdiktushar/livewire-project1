@@ -11,27 +11,23 @@ class UpdateBook extends Component
     public Book $book;
     public $isOpen = false;
 
-    public function mount(Book $book)
-    {
-        $this->book = $book;
-    }
+    protected $rules = [
+        'book.title' => 'required|string|max:255',
+        'book.author' => 'required|string|max:255',
+        'book.rating' => 'required|numeric|min:1|max:5',
+    ];
 
     public function update()
     {
-        $this->validate([
-            'book.title' => 'required|string|max:255',
-            'book.author' => 'required|string|max:255',
-            'book.rating' => 'required|numeric|min:1|max:5',
-        ]);
-
+        $this->validate();
         $this->book->save();
-        $this->reset();
         $this->isOpen = false;
         $this->dispatch('bookUpdated');
     }
 
     public function render()
     {
+        dd($this->book);
         return view('livewire.update-book');
     }
 }
