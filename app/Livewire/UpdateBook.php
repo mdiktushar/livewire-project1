@@ -16,6 +16,6 @@ class UpdateBook extends Component
 
     public function render()
     {
-        return view('livewire.update-book', ['book' => $this->book]);
+        return view('livewire.update-book');
     }
 }

@@ -3,7 +3,6 @@
 
     <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50">
         <div @click.away="open = false" class="bg-white rounded-lg p-6 w-96 mx-4">
-            <h2 class="text-lg font-bold mb-4">Add a Book</h2>
             <form wire:submit.prevent="submit" class="space-y-4">
                 <div style="padding: 10px">
                     <label for="title" class="block mb-1 font-medium text-black">Book Title</label>
