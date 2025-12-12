@@ -7,6 +7,8 @@
     <input class="search" wire:model.live.debounce.300ms="term" type="text" placeholder="Search for Books...">
     {{-- search end --}}
 
+    <livewire:create-modal />
+
     {{-- page content start --}}
     <ul class="list">
         @foreach ($books as $book)

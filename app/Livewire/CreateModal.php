@@ -28,6 +28,9 @@ class CreateModal extends Component
 
         $this->reset();
         $this->isOpen = false;
+
+        // creating a event
+         $this->dispatch('bookAdded');
     }
 
     public function render()

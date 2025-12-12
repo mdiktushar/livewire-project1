@@ -8,6 +8,8 @@ use Livewire\Attributes\Title;
 
 class BookList extends Component
 {
+    // listening events
+    protected $listeners = ['bookAdded' => '$refresh'];
     public $term = '';
 
     public function delete(Book $book)
