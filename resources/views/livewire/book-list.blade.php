@@ -8,6 +8,7 @@
     {{-- search end --}}
 
     <livewire:create-modal />
+    <br>
 
     {{-- page content start --}}
     <ul class="list">
@@ -16,6 +17,7 @@
                 <button wire:click="delete({{ $book->id }})">
                     Delete
                 </button>
+                <livewire:update-book />
                 <h3>{{ $book->title }}</h3>
                 <h4>{{ $book->author }}</h4>
                 <p>Rating: {{ $book->rating }}</p>

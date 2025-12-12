@@ -1,5 +1,5 @@
 <div x-data="{ open: @entangle('isOpen') }">
-    <button @click="open = true" class="btn btn-primary">Create Book</button>
+    <a @click="open = true" class="btn btn-primary">Update</a>
 
     <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50">
         <div @click.away="open = false" class="bg-white rounded-lg p-6 w-96 mx-4">
