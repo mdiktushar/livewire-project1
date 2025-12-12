@@ -17,7 +17,7 @@
                 <button wire:click="delete({{ $book->id }})">
                     Delete
                 </button>
-                <livewire:update-book :book="$book" :key="$book->id"/>
+                <livewire:update-book :book="$book"/>
                 <h3>{{ $book->title }}</h3>
                 <h4>{{ $book->author }}</h4>
                 <p>Rating: {{ $book->rating }}</p>

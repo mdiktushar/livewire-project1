@@ -3,7 +3,7 @@
 
     <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50">
         <div @click.away="open = false" class="bg-white rounded-lg p-6 w-96 mx-4">
-            <form wire:submit.prevent="submit" class="space-y-4">
+            <form wire:submit.prevent="update" class="space-y-4">
                 <div style="padding: 10px">
                     <label for="title" class="block mb-1 font-medium text-black">Book Title</label>
                     <input type="text" id="title" wire:model="book.title" class="input input-bordered w-full" />

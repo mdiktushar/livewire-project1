@@ -9,7 +9,7 @@ use Livewire\Attributes\Title;
 class BookList extends Component
 {
     // listening events
-    protected $listeners = ['bookAdded' => '$refresh'];
+    protected $listeners = ['bookAdded' => '$refresh', 'bookUpdated'=> '$refresh'];
     public $term = '';
 
     public function delete(Book $book)
